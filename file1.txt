@@ -1,10 +1,8 @@
-This is my 3rd file. I'm here to create 
 
-
-
-
-conflijbshiwrlnsdlvsdbvdsbvsbfvgrauwgvSBZvk 
-akdjbcjksckZB C
-ad,jcvhd';
-AAAAAAAAAAAA
+This is my 3rd file. I'm here to cr
 SFKVBDFKUBVID
+This is my 2rd file. Im making changes in main branch so that probably trying to produce conflict during merge.
+
+
+
+we are looking for a 
