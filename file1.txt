@@ -3,6 +3,16 @@ This is my 3rd file. I'm here to cr
 SFKVBDFKUBVID
 This is my 2rd file. Im making changes in main branch so that probably trying to produce conflict during merge.
 
+we are looking for a
+
+This is my 2rd file.
+
+we are looking for a 3 way merge with Git.
+This is my 3rd file. I'm here to create 
 
 
-we are looking for a 
+
+
+conflijbshiwrlnsdlvsdbvdsbvsbfvgrauwgvSBZvk 
+akdjbcjksckZB C
+ad,jcvhd';
