@@ -1,8 +1,12 @@
 name: Issues_op_cl_lb_asgn_ed Workflow
 
 on:
- issues:  
-    types:[opened ,closed,assigned,edited]
+  issues:
+    types:
+      - opened
+      - closed
+      - assigned
+      - edited
 
 jobs:
   build:
