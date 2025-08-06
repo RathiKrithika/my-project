@@ -1,6 +1,7 @@
-name: BugPR Context
+name: BugPR Context1
 
 on:
+  workflow_dispatch:
   pull_request:
     types: [labeled]
 
