@@ -1,0 +1,14 @@
+name: Java21 Project
+
+on:
+  workflow_dispatch:
+
+jobs:
+  java-setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Java SDK
+        uses: actions/setup-java@v3.14.1
+        with:
+          java-version: '21'
+          distribution: 'microsoft'
