@@ -1,0 +1,13 @@
+name: BugPR Context
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  run-on-bug-label:
+    if: github.event.label.name == 'bug'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo message
+        run: echo "This PR is labeled as '${{ github.event.label.name }}'"
