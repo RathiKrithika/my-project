@@ -1,15 +1,14 @@
 name: Java17 Project
 
- on:
-  workflow_dispatch
- jobs:
-   java-setup: 
-     runs-on: ubuntu-latest
-     steps:
-       -name: Setup Java SDK
+on:
+  workflow_dispatch:
+
+jobs:
+  java-setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Java SDK
         uses: actions/setup-java@v3.14.1
         with:
-           java-version: '17'
-           distribution: microsoft
-      
-           
+          java-version: '17'
+          distribution: 'microsoft'
