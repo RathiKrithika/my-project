@@ -1,0 +1,23 @@
+name: Matrix Include Index
+
+on: workflow_dispatch
+
+jobs:
+  matrix-with-index:
+    strategy:
+      matrix:
+        include:
+          - node: 14
+            index: 0
+          - node: 16
+            index: 1
+          - node: 18
+            index: 2
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Node version and custom index
+        run: |
+          echo "Node version: ${{ matrix.node }}"
+          echo "Custom index: ${{ matrix.index }}"
