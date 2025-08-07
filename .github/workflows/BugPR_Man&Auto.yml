@@ -1,0 +1,20 @@
+name: BugPR_Man&Auto Node Install
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  install-node-and-print-version:
+    if: (github.event_name == 'workflow_dispatch') || (github.event_name == 'pull_request' && github.event.label.name == 'bug')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.9.1
+        with:
+          node-version: '20' 
+
+      - name: Printing Node.js version
+        run: node -v
