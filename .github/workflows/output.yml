@@ -1,0 +1,20 @@
+name: Output Example
+
+on: workflow_dispatch
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      my-message: ${{ steps.set-output.outputs.message }}
+    steps:
+      - name: Set a message
+        id: set-output
+        run: echo "message=Hello from Job 1" >> $GITHUB_OUTPUT
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: Print output from job1
+        run: echo "Job1 msg is  ${{ needs.job1.outputs.my-message }}"
