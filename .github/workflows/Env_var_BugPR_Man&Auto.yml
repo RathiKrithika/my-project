@@ -1,4 +1,4 @@
-name: BugPR_Man&Auto Node Install
+name: Env_Var BugPR_Man&Auto Node Install
 
 on:
   workflow_dispatch:
@@ -10,11 +10,14 @@ jobs:
     if: (github.event_name == 'workflow_dispatch') || (github.event_name == 'pull_request' && github.event.label.name == 'bug')
     runs-on: ubuntu-latest
 
+    env:
+      NODE_VERSION: ${{ vars.NODE_VERSION }}
+
     steps:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.9.1
         with:
-          node-version: '20' 
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Printing Node.js version
         run: node -v
