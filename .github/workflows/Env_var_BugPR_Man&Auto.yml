@@ -1,4 +1,4 @@
-name: Env_Var BugPR_Man&Auto Node Install
+name: Sec_Env_Var BugPR_Man&Auto Node Install
 
 on:
   workflow_dispatch:
@@ -21,3 +21,6 @@ jobs:
 
       - name: Printing Node.js version
         run: node -v
+
+      - name: Printing my secret docker password
+        run: echo "Secret key is $DOCKER_PASSWORD"
