@@ -1,0 +1,15 @@
+name: FailFastExample
+
+on: workflow_dispatch
+
+jobs:
+  matrix-job:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true  
+      matrix:
+        os: [ubuntu-latest, 123windows-latest, macos-latest]
+
+    steps:
+      - name: Print OS
+        run: echo "Running on ${{ matrix.os }}"
