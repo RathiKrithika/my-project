@@ -1,0 +1,25 @@
+name: Max Parallel Matrix 
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install-node:
+    strategy:
+      max-parallel: 2
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Print Node version
+        run: node -v
+
+      - name: Print OS in matrix
+        run: echo "This is a matrix job"
