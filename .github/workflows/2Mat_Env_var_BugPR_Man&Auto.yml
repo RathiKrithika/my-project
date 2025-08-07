@@ -1,4 +1,4 @@
-name: 1Sec_Env_Var BugPR_Man&Auto Node Install
+name: 2Matrx_Sec_Env_Var BugPR_Man&Auto Node Install
 
 on:
   workflow_dispatch:
@@ -6,9 +6,14 @@ on:
     types: [labeled]
 
 jobs:
+  
   install-node-and-print-version:
     if: (github.event_name == 'workflow_dispatch') || (github.event_name == 'pull_request' && github.event.label.name == 'bug')
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        
+    runs-on: ${{ubuntu-matrix.os}}
 
     env:
       NODE_VERSION: ${{ vars.NODE_VERSION }}
